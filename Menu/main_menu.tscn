@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c63ofvlrqlccd"]
+
+[node name="MainMenu" type="Control" unique_id=21895194]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PLAY" type="Button" parent="." unique_id=40561243]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 94.0
+offset_right = 280.0
+offset_bottom = 125.0
+text = "PLAY"
+
+[node name="QUIT" type="Button" parent="." unique_id=758690877]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 129.0
+offset_right = 280.0
+offset_bottom = 160.0
+text = "QUIT"
