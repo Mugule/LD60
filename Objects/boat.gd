@@ -40,18 +40,34 @@ func on_order_received(new_order):
 		else :
 			actual_direction = orders[new_order]
 			actual_speed = speed_1
-		# Collision and particules
+		# Collision and Keep actual collision
 		if actual_direction == Vector2.ZERO :
 			particule.emitting = false
-			# Keep actual collision
-		elif actual_direction.x != 0 :
-			particule.emitting = true
-			horizontal_collision_shape.disabled = true
-			vertical_collision_shape.disabled = false
-		else :
-			particule.emitting = true
+		# Particules and check collision
+		if actual_direction == Vector2.UP : # NORTH
 			horizontal_collision_shape.disabled = false
 			vertical_collision_shape.disabled = true
+			particule.emitting = true
+			particule.direction = Vector2(0,1)
+			particule.position = Vector2(0,6)
+		elif actual_direction == Vector2.DOWN : # SOUTH
+			horizontal_collision_shape.disabled = false
+			vertical_collision_shape.disabled = true
+			particule.emitting = true
+			particule.direction = Vector2(0,-1)
+			particule.position = Vector2(0,-4)
+		elif actual_direction == Vector2.LEFT : # EAST
+			horizontal_collision_shape.disabled = true
+			vertical_collision_shape.disabled = false
+			particule.emitting = true
+			particule.direction = Vector2(-1,-0.5)
+			particule.position = Vector2(6,3)
+		elif actual_direction == Vector2.RIGHT : # WEST
+			horizontal_collision_shape.disabled = true
+			vertical_collision_shape.disabled = false
+			particule.emitting = true
+			particule.direction = Vector2(1,-0.5)
+			particule.position = Vector2(-6,3)
 		# Animation
 		if new_order in sprite.sprite_frames.get_animation_names() :
 			sprite.play(new_order)

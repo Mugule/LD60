@@ -27,11 +27,19 @@ func reset_all(take_order_after_reset : bool = true):
 	actual_word = ''
 	can_take_order = take_order_after_reset
 
-func add_bip(bip : String) :
+func ti():
 	if actual_index == 3 :
 		reset_all()
 	if can_take_order :
-		actual_letter.add_bip(bip)
+		actual_letter.ti()
+
+func tah():
+	if can_take_order :
+		actual_letter.tah()
+
+func bip_end():
+	if can_take_order :
+		actual_letter.bip_end()
 
 func on_letter_valid(letter : String):
 	can_take_order = false # Parent will reset it

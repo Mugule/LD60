@@ -98,10 +98,12 @@ y_sort_enabled = true
 script = ExtResource("1_jnrec")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=297426315]
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_ur235")
 animation = &"TE"
 autoplay = "TS"
-frame_progress = 0.4989411
+frame_progress = 0.92241585
+offset = Vector2(0, -2)
 
 [node name="Id" type="Label" parent="." unique_id=1662204354]
 offset_left = 4.0

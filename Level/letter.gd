@@ -24,7 +24,7 @@ func _process(_delta):
 		var ratio : float = timer.time_left / MorseGlobal.space_time
 		timer_bar.size.x = ratio * 26
 
-func reset():
+func reset(): # Parent reset the letter
 	active = false
 	index = 0
 	timer.wait_time = MorseGlobal.space_time
@@ -35,26 +35,32 @@ func reset():
 		b.hide()
 	checkmark.hide()
 
-func add_bip(bip : String):
-	# (re)start timer
-	start_timer()
-	# Show titah
-	current += bip
-	if bip == "." :
-		bips.get_node("Ti"+str(index)).show()
-	elif bip == "-" :
+func ti():
+	current += "."
+	bips.get_node("Ti"+str(index)).show()
+	update_letter()
+
+func tah():
+	if current.length() > 0 :
+		current[-1] = "-"
+		bips.get_node("Ti"+str(index)).hide()
 		bips.get_node("Ta"+str(index)).show()
-	# Increment
-	index += 1
-	# PRESHOW LETTER
+		update_letter()
+
+func update_letter():
 	if MorseGlobal.letters.has(current) :
 		result = MorseGlobal.letters[current]
 	else :
 		result = "?"
 	letter_node.text = result
-	# IF FULL CHECK
+
+func bip_end():
+	timer.stop()
+	index += 1
 	if index == 4 :
 		check()
+	if bips.get_node("Ti0").visible or bips.get_node("Ta0").visible : # Sry about this
+		start_timer()
 
 func start_timer():
 	active = true

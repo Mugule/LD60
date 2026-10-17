@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://slfo4x6t3dru"]
+
+[ext_resource type="Script" uid="uid://cygqitt8h7lcr" path="res://Objects/drone.gd" id="1_j8ubb"]
+[ext_resource type="Texture2D" uid="uid://buj5x4tbw3klj" path="res://Aseprite/objects/drones.png" id="1_qtiyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2i4t"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8goe8"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv8iu"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpdp1"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ubb"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isdyx"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeay5"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrc82"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnn1p"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkg4g"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0322n"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prfec"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2i4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2i4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8goe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv8iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpdp1")
+}],
+"loop": true,
+"name": &"down",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8ubb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isdyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeay5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrc82")
+}],
+"loop": true,
+"name": &"side",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnn1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkg4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0322n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prfec")
+}],
+"loop": true,
+"name": &"up",
+"speed": 11.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_j8ubb"]
+colors = PackedColorArray(0.9607843, 0.92941177, 1, 1, 0.20392157, 0.52156866, 0.6156863, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_isdyx"]
+radius = 2.0
+
+[node name="Drone" type="Node2D" unique_id=164660705]
+y_sort_enabled = true
+script = ExtResource("1_j8ubb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2042932028]
+position = Vector2(1, -4)
+sprite_frames = SubResource("SpriteFrames_j2i4t")
+animation = &"side"
+autoplay = "side"
+frame_progress = 0.32139507
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1469229906]
+y_sort_enabled = true
+position = Vector2(0, -2)
+lifetime = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(3, 3)
+direction = Vector2(0, -0.5)
+spread = 49.9
+gravity = Vector2(0, 80)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+color_initial_ramp = SubResource("Gradient_j8ubb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1968752005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=651214015]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_isdyx")
