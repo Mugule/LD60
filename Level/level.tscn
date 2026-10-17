@@ -4,35 +4,141 @@
 [ext_resource type="Script" uid="uid://bv1xyojxd1gyg" path="res://Level/level.gd" id="1_wqlfs"]
 [ext_resource type="Script" uid="uid://b246giamxehvb" path="res://Level/camera_2d.gd" id="2_52x1o"]
 [ext_resource type="Texture2D" uid="uid://bm5i7b35nolvv" path="res://Aseprite/mockup/ui_base.png" id="2_uawph"]
+[ext_resource type="PackedScene" uid="uid://dwv72d3dm3paw" path="res://Objects/rock.tscn" id="3_1teg4"]
+[ext_resource type="Texture2D" uid="uid://brpxt2gt72hmp" path="res://Aseprite/mockup/cloud.png" id="3_dx36h"]
 [ext_resource type="Script" uid="uid://c6po2vtvv8e3w" path="res://Level/boats.gd" id="3_py82k"]
 [ext_resource type="PackedScene" uid="uid://brw74cog6cf1e" path="res://Objects/boat.tscn" id="3_wqlfs"]
 [ext_resource type="Script" uid="uid://dpdh1b45wiykp" path="res://Level/biper.gd" id="5_iincs"]
 [ext_resource type="Script" uid="uid://bpnm8bnsattdk" path="res://Level/letter_container.gd" id="6_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dasmapp1dg0jy" path="res://Level/letter.tscn" id="6_nk1il"]
+[ext_resource type="Texture2D" uid="uid://m0pf615jp016" path="res://Aseprite/mockup/beach.png" id="10_py82k"]
+[ext_resource type="Texture2D" uid="uid://xa318p8svxwl" path="res://Aseprite/mockup/notes.png" id="12_i5g78"]
+[ext_resource type="FontFile" uid="uid://cyrc7x1exlkj1" path="res://Fonts/m3x6.ttf" id="13_q47le"]
 
 [node name="Level" type="Node2D" unique_id=675807826]
 script = ExtResource("1_wqlfs")
 
-[node name="Boats" type="Node2D" parent="." unique_id=1664959774]
+[node name="World" type="Node2D" parent="." unique_id=1568139464]
+y_sort_enabled = true
+
+[node name="Beach" type="TextureRect" parent="World" unique_id=775705764]
+z_index = -1
+offset_left = -1163.0
+offset_top = 92.0
+offset_right = 837.0
+offset_bottom = 192.0
+texture = ExtResource("10_py82k")
+
+[node name="Clouds" type="Node2D" parent="World" unique_id=1249901785]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Clouds" unique_id=1037973398]
+visible = false
+z_index = 1
+position = Vector2(149, -166)
+texture = ExtResource("3_dx36h")
+
+[node name="Rocks" type="Node2D" parent="World" unique_id=576442825]
+y_sort_enabled = true
+position = Vector2(-163, -368)
+
+[node name="rock1" parent="World/Rocks" unique_id=590289911 instance=ExtResource("3_1teg4")]
+position = Vector2(-28, 17)
+rock_type = 2
+
+[node name="rock2" parent="World/Rocks" unique_id=1729538602 instance=ExtResource("3_1teg4")]
+position = Vector2(109, 156)
+
+[node name="rock3" parent="World/Rocks" unique_id=812308394 instance=ExtResource("3_1teg4")]
+position = Vector2(188, 67)
+rock_type = 2
+
+[node name="rock4" parent="World/Rocks" unique_id=1681998380 instance=ExtResource("3_1teg4")]
+position = Vector2(137, -54)
+
+[node name="rock5" parent="World/Rocks" unique_id=1405445797 instance=ExtResource("3_1teg4")]
+position = Vector2(43, 86)
+rock_type = 1
+
+[node name="rock6" parent="World/Rocks" unique_id=221376380 instance=ExtResource("3_1teg4")]
+position = Vector2(251, -41)
+
+[node name="rock7" parent="World/Rocks" unique_id=1788348564 instance=ExtResource("3_1teg4")]
+position = Vector2(371, 108)
+rock_type = 2
+
+[node name="rock8" parent="World/Rocks" unique_id=911527531 instance=ExtResource("3_1teg4")]
+position = Vector2(439, -97)
+
+[node name="rock9" parent="World/Rocks" unique_id=1305668734 instance=ExtResource("3_1teg4")]
+position = Vector2(400, -10)
+rock_type = 1
+
+[node name="rock10" parent="World/Rocks" unique_id=952637792 instance=ExtResource("3_1teg4")]
+position = Vector2(279, 109)
+rock_type = 2
+
+[node name="rock11" parent="World/Rocks" unique_id=1021937008 instance=ExtResource("3_1teg4")]
+position = Vector2(211, -128)
+
+[node name="rock12" parent="World/Rocks" unique_id=2126678116 instance=ExtResource("3_1teg4")]
+position = Vector2(72, -104)
+
+[node name="rock13" parent="World/Rocks" unique_id=1245064878 instance=ExtResource("3_1teg4")]
+position = Vector2(-114, -58)
+rock_type = 2
+
+[node name="rock14" parent="World/Rocks" unique_id=2095546370 instance=ExtResource("3_1teg4")]
+position = Vector2(132, 38)
+
+[node name="rock15" parent="World/Rocks" unique_id=2073163440 instance=ExtResource("3_1teg4")]
+position = Vector2(185, 23)
+rock_type = 1
+
+[node name="rock16" parent="World/Rocks" unique_id=1722804085 instance=ExtResource("3_1teg4")]
+position = Vector2(-117, 28)
+rock_type = 2
+
+[node name="rock17" parent="World/Rocks" unique_id=1022329458 instance=ExtResource("3_1teg4")]
+position = Vector2(-125, 164)
+
+[node name="rock18" parent="World/Rocks" unique_id=694634858 instance=ExtResource("3_1teg4")]
+position = Vector2(-64, 97)
+rock_type = 1
+
+[node name="rock19" parent="World/Rocks" unique_id=2048838477 instance=ExtResource("3_1teg4")]
+position = Vector2(425, 202)
+rock_type = 2
+
+[node name="rock20" parent="World/Rocks" unique_id=1311864040 instance=ExtResource("3_1teg4")]
+position = Vector2(312, 19)
+rock_type = 1
+
+[node name="Boats" type="Node2D" parent="World" unique_id=1664959774]
+y_sort_enabled = true
+position = Vector2(-170, -434)
 script = ExtResource("3_py82k")
 
-[node name="B" parent="Boats" unique_id=100744886 instance=ExtResource("3_wqlfs")]
-position = Vector2(209, 242)
+[node name="M" parent="World/Boats" unique_id=100744886 instance=ExtResource("3_wqlfs")]
+y_sort_enabled = false
+position = Vector2(160, 455)
 
-[node name="C" parent="Boats" unique_id=1091338488 instance=ExtResource("3_wqlfs")]
-position = Vector2(160, 225)
+[node name="I" parent="World/Boats" unique_id=1091338488 instance=ExtResource("3_wqlfs")]
+y_sort_enabled = false
+position = Vector2(104, 393)
 
-[node name="D" parent="Boats" unique_id=1603113405 instance=ExtResource("3_wqlfs")]
-position = Vector2(172, 265)
+[node name="D" parent="World/Boats" unique_id=1603113405 instance=ExtResource("3_wqlfs")]
+y_sort_enabled = false
+position = Vector2(57, 436)
 
-[node name="F" parent="Boats" unique_id=233138924 instance=ExtResource("3_wqlfs")]
-position = Vector2(116, 265)
+[node name="T" parent="World/Boats" unique_id=233138924 instance=ExtResource("3_wqlfs")]
+y_sort_enabled = false
+position = Vector2(121, 436)
 
-[node name="G" parent="Boats" unique_id=1449247885 instance=ExtResource("3_wqlfs")]
-position = Vector2(193, 220)
+[node name="U" parent="World/Boats" unique_id=1449247885 instance=ExtResource("3_wqlfs")]
+y_sort_enabled = false
+position = Vector2(181, 406)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=486463483]
-position = Vector2(-30, 207)
 position_smoothing_speed = 1.0
 script = ExtResource("2_52x1o")
 
@@ -40,6 +146,7 @@ script = ExtResource("2_52x1o")
 script = ExtResource("1_o6mkr")
 
 [node name="Sprite2D" type="TextureRect" parent="Hero" unique_id=1378025673]
+visible = false
 offset_left = 248.0
 offset_right = 360.0
 offset_bottom = 360.0
@@ -53,19 +160,178 @@ offset_bottom = 355.0
 text = "MORSE"
 script = ExtResource("5_iincs")
 
-[node name="LetterContainer" type="HBoxContainer" parent="Hero" unique_id=1451763572]
-offset_left = 271.0
+[node name="LetterContainer" type="Control" parent="Hero" unique_id=1362798514]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 270.0
 offset_top = 287.0
-offset_right = 357.0
+offset_right = 356.0
 offset_bottom = 315.0
-theme_override_constants/separation = 1
 script = ExtResource("6_d6qko")
 
 [node name="0" parent="Hero/LetterContainer" unique_id=1826401334 instance=ExtResource("6_nk1il")]
-layout_mode = 2
+layout_mode = 0
 
 [node name="1" parent="Hero/LetterContainer" unique_id=769515481 instance=ExtResource("6_nk1il")]
-layout_mode = 2
+layout_mode = 0
+offset_left = 29.0
+offset_right = 57.0
 
 [node name="2" parent="Hero/LetterContainer" unique_id=1290624547 instance=ExtResource("6_nk1il")]
-layout_mode = 2
+layout_mode = 0
+offset_left = 58.0
+offset_right = 86.0
+
+[node name="Notes" type="Sprite2D" parent="Hero" unique_id=996985863]
+position = Vector2(320, 159)
+texture = ExtResource("12_i5g78")
+
+[node name="ID" type="Label" parent="Hero/Notes" unique_id=712923293]
+offset_left = -12.0
+offset_top = -79.0
+offset_right = 28.0
+offset_bottom = -56.0
+theme_override_colors/font_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "ID + order"
+
+[node name="All1" type="Label" parent="Hero/Notes" unique_id=957600181]
+offset_left = -13.0
+offset_top = -66.0
+offset_right = 57.0
+offset_bottom = -43.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "If you want"
+
+[node name="All2" type="Label" parent="Hero/Notes" unique_id=1826553990]
+offset_left = -10.0
+offset_top = -57.0
+offset_right = 60.0
+offset_bottom = -34.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "call us all"
+
+[node name="A" type="Label" parent="Hero/Notes" unique_id=1295277825]
+offset_left = -3.0
+offset_top = -48.0
+offset_right = 67.0
+offset_bottom = -25.0
+theme_override_colors/font_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "A .-"
+
+[node name="Order" type="Label" parent="Hero/Notes" unique_id=1441597184]
+offset_left = -8.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = -7.0
+theme_override_colors/font_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "ORDERS"
+
+[node name="TravelNorth" type="Label" parent="Hero/Notes" unique_id=103869763]
+offset_left = -12.0
+offset_top = 5.0
+offset_right = 58.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "Travel North"
+
+[node name="TN" type="Label" parent="Hero/Notes" unique_id=1650522184]
+offset_left = -11.0
+offset_top = 14.0
+offset_right = 59.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "TN  - / -.  "
+
+[node name="TravelSouth" type="Label" parent="Hero/Notes" unique_id=1610463068]
+offset_left = -11.0
+offset_top = 28.0
+offset_right = 59.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "Travel South"
+
+[node name="TS" type="Label" parent="Hero/Notes" unique_id=420977558]
+offset_left = -8.0
+offset_top = 36.0
+offset_right = 62.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "TS  - / ... "
+
+[node name="TravelEst" type="Label" parent="Hero/Notes" unique_id=1426000152]
+offset_left = -10.0
+offset_top = -17.0
+offset_right = 60.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "Travel Est"
+
+[node name="TE" type="Label" parent="Hero/Notes" unique_id=45252151]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 62.0
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "TE - / ."
+
+[node name="TravelWest" type="Label" parent="Hero/Notes" unique_id=1097078291]
+offset_left = -10.0
+offset_top = 51.0
+offset_right = 60.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "Travel West"
+
+[node name="TW" type="Label" parent="Hero/Notes" unique_id=798330426]
+offset_left = -8.0
+offset_top = 60.0
+offset_right = 62.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "TW - / .--"
+
+[node name="Stop" type="Label" parent="Hero/Notes" unique_id=1172842270]
+offset_left = -5.0
+offset_top = 74.0
+offset_right = 65.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "Stop !"
+
+[node name="NO" type="Label" parent="Hero/Notes" unique_id=519081540]
+offset_left = -6.0
+offset_top = 85.0
+offset_right = 64.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_fonts/font = ExtResource("13_q47le")
+theme_override_font_sizes/font_size = 16
+text = "NO -. / ---"

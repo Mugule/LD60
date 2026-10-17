@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 var letter_nodes : Array
 var actual_letter : NodeLetter
@@ -28,12 +28,14 @@ func reset_all(take_order_after_reset : bool = true):
 	can_take_order = take_order_after_reset
 
 func add_bip(bip : String) :
+	if actual_index == 3 :
+		reset_all()
 	if can_take_order :
 		actual_letter.add_bip(bip)
 
 func on_letter_valid(letter : String):
 	can_take_order = false # Parent will reset it
-	print("actual_letter : %s - %s" % [actual_letter.name,letter])
+	print("received_letter : %s - %s" % [actual_letter.name,letter])
 	actual_word += letter
 	actual_index += 1
 	if actual_index >= letter_nodes.size() : # VALID ORDER <=

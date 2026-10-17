@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dwv72d3dm3paw"]
+
+[ext_resource type="Script" uid="uid://dxkfaqfdrqd2" path="res://Objects/rock.gd" id="1_4h2ig"]
+[ext_resource type="Texture2D" uid="uid://bqiv75n43yu0v" path="res://Aseprite/objects/rocks.png" id="1_rous1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h2ig"]
+atlas = ExtResource("1_rous1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puvw7"]
+atlas = ExtResource("1_rous1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vjpv"]
+atlas = ExtResource("1_rous1")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c1qp"]
+atlas = ExtResource("1_rous1")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4inkq"]
+atlas = ExtResource("1_rous1")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa7w4"]
+atlas = ExtResource("1_rous1")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qhr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h2ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puvw7")
+}],
+"loop": true,
+"name": &"big",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vjpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c1qp")
+}],
+"loop": true,
+"name": &"medium",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4inkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa7w4")
+}],
+"loop": true,
+"name": &"small",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4h2ig"]
+radius = 7.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_puvw7"]
+radius = 5.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vjpv"]
+radius = 4.0
+height = 18.0
+
+[node name="rock" type="Node2D" unique_id=590289911]
+y_sort_enabled = true
+script = ExtResource("1_4h2ig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=393643145]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_1qhr1")
+animation = &"small"
+frame_progress = 0.41456628
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1021995771]
+
+[node name="Big" type="CollisionShape2D" parent="Area2D" unique_id=1868669563]
+position = Vector2(1, -5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4h2ig")
+disabled = true
+
+[node name="Medium" type="CollisionShape2D" parent="Area2D" unique_id=1910642068]
+position = Vector2(1, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_puvw7")
+disabled = true
+
+[node name="Small" type="CollisionShape2D" parent="Area2D" unique_id=562411294]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7vjpv")
+disabled = true

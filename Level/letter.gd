@@ -26,8 +26,9 @@ func _process(_delta):
 
 func reset():
 	active = false
+	index = 0
 	timer.wait_time = MorseGlobal.space_time
-	letter_node.text = ""
+	letter_node.text = "-"
 	current = ""
 	timer_bar.size.x = 26
 	for b in bips.get_children() :

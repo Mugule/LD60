@@ -1,14 +1,17 @@
 extends Camera2D
 
-var mouse_is_pressed : bool = true
+var mouse_is_pressed : bool = false
 var origin_click : Vector2
 var origin_camera : Vector2
 var camera_speed : float = 254
-var limits : Rect2 = Rect2(-100,-100, 460, 460)
+var limits : Rect2 = Rect2(-100,-200, 460, 460)
 
 var blocked : bool
 
 # I dont use limit of camera2D because I dont have time to watch tuto for it.
+
+func _ready():
+	origin_camera = Vector2(180,180)
 
 # CAMERA MOVEMENT
 
@@ -21,13 +24,13 @@ func _process(delta):
 		else :
 			var direction : Vector2 = Vector2.ZERO
 			if Input.is_action_pressed("ui_up"):
-				direction = Vector2.UP
+				direction += Vector2.UP
 			elif Input.is_action_pressed("ui_down"):
-				direction = Vector2.DOWN
-			elif Input.is_action_pressed("ui_left"):
-				direction = Vector2.LEFT
+				direction += Vector2.DOWN
+			if Input.is_action_pressed("ui_left"):
+				direction += Vector2.LEFT
 			elif Input.is_action_pressed("ui_right"):
-				direction = Vector2.RIGHT
+				direction += Vector2.RIGHT
 			var p : Vector2 = position + (direction * (delta * camera_speed))
 			global_position = p.clamp(limits.position, limits.end)
 

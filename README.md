@@ -2,8 +2,10 @@
 Ludum Dare 60 Compo Rules
 
 Used and Credits :
-	Colors palette Created by Nauris
+Colors palette Created by Nauris
 https://lospec.com/palette-list/na16
+fonts by Daniel Linssen
+https://managore.itch.io/
 
 
 ## Notes :
