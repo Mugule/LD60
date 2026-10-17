@@ -10,17 +10,13 @@ var blocked : bool
 
 # I dont use limit of camera2D because I dont have time to watch tuto for it.
 
-func _ready():
-	origin_camera = Vector2(180,180)
-
 # CAMERA MOVEMENT
-
 func _process(delta):
 	if !blocked :
+		var p : Vector2
 		if mouse_is_pressed :
 			var delta_pos : Vector2 = get_viewport().get_mouse_position() - origin_click
-			var p : Vector2 = origin_camera - delta_pos
-			global_position = p.clamp(limits.position, limits.end)
+			p = origin_camera - delta_pos
 		else :
 			var direction : Vector2 = Vector2.ZERO
 			if Input.is_action_pressed("ui_up"):
@@ -31,9 +27,10 @@ func _process(delta):
 				direction += Vector2.LEFT
 			elif Input.is_action_pressed("ui_right"):
 				direction += Vector2.RIGHT
-			var p : Vector2 = position + (direction * (delta * camera_speed))
-			global_position = p.clamp(limits.position, limits.end)
+			p = position + (direction * (delta * camera_speed))
+		global_position = p.clamp(limits.position, limits.end)
 
+#MOOOOVE
 func _input(_event):
 	if !blocked :
 		# MOVE by CLICK

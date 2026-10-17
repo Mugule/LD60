@@ -132,7 +132,7 @@ color_initial_ramp = SubResource("Gradient_j8ubb")
 sprite_frames = SubResource("SpriteFrames_j2i4t")
 animation = &"down"
 autoplay = "side"
-frame_progress = 0.08188133
+frame_progress = 0.71982527
 offset = Vector2(1, -4)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1968752005]

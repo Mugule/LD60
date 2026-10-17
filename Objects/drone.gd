@@ -11,7 +11,7 @@ var attacking : bool = true
 var target_pos : Vector2 = Vector2.ZERO
 var origin_spawn : Vector2 = Vector2(300,300)
 
-signal attack()
+signal attack(attacked : Boat)
 
 func _ready():
 	area_2d.area_entered.connect(on_area_entered)
@@ -38,4 +38,4 @@ func on_area_entered(area : Area2D):
 		attacking = false
 		await get_tree().create_timer(0.4).timeout
 		target_pos = origin_spawn
-		attack.emit()
+		attack.emit(target)
