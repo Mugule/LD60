@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dpdh1b45wiykp" path="res://Level/biper.gd" id="5_iincs"]
 [ext_resource type="Script" uid="uid://bpnm8bnsattdk" path="res://Level/letter_container.gd" id="6_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dasmapp1dg0jy" path="res://Level/letter.tscn" id="6_nk1il"]
+[ext_resource type="PackedScene" uid="uid://slfo4x6t3dru" path="res://Objects/drone.tscn" id="7_1p6h5"]
 [ext_resource type="Texture2D" uid="uid://m0pf615jp016" path="res://Aseprite/mockup/beach.png" id="10_py82k"]
 [ext_resource type="Texture2D" uid="uid://xa318p8svxwl" path="res://Aseprite/mockup/notes.png" id="12_i5g78"]
 [ext_resource type="FontFile" uid="uid://cyrc7x1exlkj1" path="res://Fonts/m3x6.ttf" id="13_q47le"]
@@ -137,6 +138,12 @@ position = Vector2(121, 436)
 [node name="U" parent="World/Boats" unique_id=1449247885 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
 position = Vector2(181, 406)
+
+[node name="Drones" type="Node2D" parent="World" unique_id=1255335364]
+y_sort_enabled = true
+
+[node name="Drone" parent="World/Drones" unique_id=164660705 instance=ExtResource("7_1p6h5")]
+position = Vector2(117, -29)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=486463483]
 position_smoothing_speed = 1.0

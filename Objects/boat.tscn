@@ -90,13 +90,18 @@ height = 10.0
 radius = 3.0
 height = 10.0
 
+[sub_resource type="Gradient" id="Gradient_jnrec"]
+colors = PackedColorArray(0.9607843, 0.92941177, 1, 1, 0.20392157, 0.52156866, 0.6156863, 1)
+
 [node name="Boat" type="Node2D" unique_id=100744886]
 y_sort_enabled = true
 script = ExtResource("1_jnrec")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=297426315]
 sprite_frames = SubResource("SpriteFrames_ur235")
-animation = &"TW"
+animation = &"TE"
+autoplay = "TS"
+frame_progress = 0.4989411
 
 [node name="Id" type="Label" parent="." unique_id=1662204354]
 offset_left = 4.0
@@ -115,3 +120,16 @@ disabled = true
 [node name="HorizontalCollisionShape" type="CollisionShape2D" parent="Area2D" unique_id=2037097661]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_xnmmp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=228546864]
+position = Vector2(-6, 3)
+emitting = false
+lifetime = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(3, 0)
+direction = Vector2(-1, -0.5)
+spread = 14.71
+gravity = Vector2(0, 10)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+color_initial_ramp = SubResource("Gradient_jnrec")

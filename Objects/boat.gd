@@ -5,6 +5,7 @@ class_name Boat extends Node2D
 @onready var horizontal_collision_shape : CollisionShape2D = $Area2D/HorizontalCollisionShape
 @onready var vertical_collision_shape : CollisionShape2D = $Area2D/VerticalCollisionShape
 @onready var area_2d : Area2D = $Area2D
+@onready var particule : CPUParticles2D = $CPUParticles2D
 
 
 @export var speed_1 : float = 6.0
@@ -39,11 +40,16 @@ func on_order_received(new_order):
 		else :
 			actual_direction = orders[new_order]
 			actual_speed = speed_1
-		# Collision
-		if actual_direction.x != 0 :
+		# Collision and particules
+		if actual_direction == Vector2.ZERO :
+			particule.emitting = false
+			# Keep actual collision
+		elif actual_direction.x != 0 :
+			particule.emitting = true
 			horizontal_collision_shape.disabled = true
 			vertical_collision_shape.disabled = false
 		else :
+			particule.emitting = true
 			horizontal_collision_shape.disabled = false
 			vertical_collision_shape.disabled = true
 		# Animation
