@@ -1,96 +1,71 @@
 [gd_scene format=3 uid="uid://1jnr587qhn2e"]
 
 [ext_resource type="Script" uid="uid://dpk2rpsh5jtwy" path="res://Objects/hero.gd" id="1_o6mkr"]
+[ext_resource type="Script" uid="uid://bv1xyojxd1gyg" path="res://Level/level.gd" id="1_wqlfs"]
 [ext_resource type="Script" uid="uid://b246giamxehvb" path="res://Level/camera_2d.gd" id="2_52x1o"]
 [ext_resource type="Texture2D" uid="uid://bm5i7b35nolvv" path="res://Aseprite/mockup/ui_base.png" id="2_uawph"]
-[ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="3_52x1o"]
+[ext_resource type="Script" uid="uid://c6po2vtvv8e3w" path="res://Level/boats.gd" id="3_py82k"]
+[ext_resource type="PackedScene" uid="uid://brw74cog6cf1e" path="res://Objects/boat.tscn" id="3_wqlfs"]
+[ext_resource type="Script" uid="uid://dpdh1b45wiykp" path="res://Level/biper.gd" id="5_iincs"]
+[ext_resource type="Script" uid="uid://bpnm8bnsattdk" path="res://Level/letter_container.gd" id="6_d6qko"]
+[ext_resource type="PackedScene" uid="uid://dasmapp1dg0jy" path="res://Level/letter.tscn" id="6_nk1il"]
 
 [node name="Level" type="Node2D" unique_id=675807826]
+script = ExtResource("1_wqlfs")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1577655171]
-position = Vector2(13, 45)
-texture = ExtResource("3_52x1o")
+[node name="Boats" type="Node2D" parent="." unique_id=1664959774]
+script = ExtResource("3_py82k")
 
-[node name="Icon2" type="Sprite2D" parent="." unique_id=2083715725]
-position = Vector2(349, 156)
-texture = ExtResource("3_52x1o")
+[node name="B" parent="Boats" unique_id=100744886 instance=ExtResource("3_wqlfs")]
+position = Vector2(209, 242)
+
+[node name="C" parent="Boats" unique_id=1091338488 instance=ExtResource("3_wqlfs")]
+position = Vector2(160, 225)
+
+[node name="D" parent="Boats" unique_id=1603113405 instance=ExtResource("3_wqlfs")]
+position = Vector2(172, 265)
+
+[node name="F" parent="Boats" unique_id=233138924 instance=ExtResource("3_wqlfs")]
+position = Vector2(116, 265)
+
+[node name="G" parent="Boats" unique_id=1449247885 instance=ExtResource("3_wqlfs")]
+position = Vector2(193, 220)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=486463483]
 position = Vector2(-30, 207)
 position_smoothing_speed = 1.0
 script = ExtResource("2_52x1o")
 
-[node name="SubViewport" type="CanvasLayer" parent="." unique_id=975054709]
+[node name="Hero" type="CanvasLayer" parent="." unique_id=975054709]
 script = ExtResource("1_o6mkr")
 
-[node name="Sprite2D" type="TextureRect" parent="SubViewport" unique_id=1378025673]
+[node name="Sprite2D" type="TextureRect" parent="Hero" unique_id=1378025673]
 offset_left = 248.0
 offset_right = 360.0
 offset_bottom = 360.0
 texture = ExtResource("2_uawph")
 
-[node name="Main" type="Button" parent="SubViewport" unique_id=691284511]
+[node name="Biper" type="Button" parent="Hero" unique_id=691284511]
 offset_left = 272.0
 offset_top = 324.0
 offset_right = 356.0
 offset_bottom = 355.0
 text = "MORSE"
+script = ExtResource("5_iincs")
 
-[node name="Inputs" type="Control" parent="SubViewport" unique_id=2003454982]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="0" type="TextureRect" parent="SubViewport/Inputs" unique_id=844846978]
-layout_mode = 0
+[node name="LetterContainer" type="HBoxContainer" parent="Hero" unique_id=1451763572]
 offset_left = 271.0
-offset_top = 289.0
-offset_right = 298.0
-offset_bottom = 316.0
+offset_top = 287.0
+offset_right = 357.0
+offset_bottom = 315.0
+theme_override_constants/separation = 1
+script = ExtResource("6_d6qko")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/Inputs/0" unique_id=1049770330]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 14
-text = "A"
-scroll_active = false
-horizontal_alignment = 1
+[node name="0" parent="Hero/LetterContainer" unique_id=1826401334 instance=ExtResource("6_nk1il")]
+layout_mode = 2
 
-[node name="Timer" type="ColorRect" parent="SubViewport/Inputs/0" unique_id=1319288409]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = -2.0
-offset_bottom = 3.0
-grow_horizontal = 2
+[node name="1" parent="Hero/LetterContainer" unique_id=769515481 instance=ExtResource("6_nk1il")]
+layout_mode = 2
 
-[node name="Ti" type="ColorRect" parent="SubViewport/Inputs/0" unique_id=1980973788]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = -3.0
-grow_vertical = 0
-
-[node name="Taah" type="ColorRect" parent="SubViewport/Inputs/0" unique_id=828859712]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = -5.0
-offset_right = 13.0
-offset_bottom = -3.0
-grow_vertical = 0
+[node name="2" parent="Hero/LetterContainer" unique_id=1290624547 instance=ExtResource("6_nk1il")]
+layout_mode = 2

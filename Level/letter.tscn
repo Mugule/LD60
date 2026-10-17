@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dasmapp1dg0jy"]
+
+[ext_resource type="Texture2D" uid="uid://dnpn6q1flxo76" path="res://Aseprite/mockup/blank_letter.png" id="1_wwulo"]
+[ext_resource type="Script" uid="uid://bk28whe8a3xss" path="res://Level/letter.gd" id="2_p0p00"]
+[ext_resource type="Texture2D" uid="uid://b5y00vkvswhgg" path="res://Aseprite/mockup/ti.png" id="3_ynoh7"]
+[ext_resource type="Texture2D" uid="uid://csp014nekwi87" path="res://Aseprite/mockup/tah.png" id="4_82uwe"]
+[ext_resource type="Texture2D" uid="uid://b1gmogcmsmlvw" path="res://Aseprite/mockup/check.png" id="5_jshul"]
+
+[node name="Letter" type="TextureRect" unique_id=1826401334]
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("1_wwulo")
+script = ExtResource("2_p0p00")
+
+[node name="Letter" type="RichTextLabel" parent="." unique_id=32917374]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.101960786, 0.03529412, 0.2, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "A"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="TimerBar" type="ColorRect" parent="." unique_id=1174232397]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=21842790]
+one_shot = true
+
+[node name="Bips" type="HBoxContainer" parent="." unique_id=725914303]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Ti0" type="TextureRect" parent="Bips" unique_id=1319127560]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_ynoh7")
+
+[node name="Ta0" type="TextureRect" parent="Bips" unique_id=1522976634]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_82uwe")
+
+[node name="Ti1" type="TextureRect" parent="Bips" unique_id=1390400197]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_ynoh7")
+
+[node name="Ta1" type="TextureRect" parent="Bips" unique_id=260559450]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_82uwe")
+
+[node name="Ti2" type="TextureRect" parent="Bips" unique_id=742927782]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_ynoh7")
+
+[node name="Ta2" type="TextureRect" parent="Bips" unique_id=429781175]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_82uwe")
+
+[node name="Ti3" type="TextureRect" parent="Bips" unique_id=1513356390]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_ynoh7")
+
+[node name="Ta3" type="TextureRect" parent="Bips" unique_id=764129198]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_82uwe")
+
+[node name="Checkmark" type="TextureRect" parent="." unique_id=2047984480]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 27.0
+offset_bottom = 4.0
+texture = ExtResource("5_jshul")

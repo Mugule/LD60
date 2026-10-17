@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://brw74cog6cf1e"]
+
+[ext_resource type="Script" uid="uid://d1mvq8vu6mpog" path="res://Objects/boat.gd" id="1_jnrec"]
+[ext_resource type="Texture2D" uid="uid://cer0qrp6mxyto" path="res://Aseprite/boats/civilian.png" id="2_xnmmp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18ve3"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lowte"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax07d"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_303ab"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrslh"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0l77"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkr5y"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekkt0"]
+atlas = ExtResource("2_xnmmp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ur235"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18ve3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lowte")
+}],
+"loop": true,
+"name": &"EE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax07d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_303ab")
+}],
+"loop": true,
+"name": &"NN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrslh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0l77")
+}],
+"loop": true,
+"name": &"SS",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkr5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekkt0")
+}],
+"loop": true,
+"name": &"WW",
+"speed": 5.0
+}]
+
+[node name="Boat" type="Node2D" unique_id=100744886]
+script = ExtResource("1_jnrec")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=297426315]
+sprite_frames = SubResource("SpriteFrames_ur235")
+animation = &"NN"
+
+[node name="Id" type="Label" parent="." unique_id=1662204354]
+offset_left = 4.0
+offset_top = -26.0
+offset_right = 44.0
+offset_bottom = -3.0
+theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+text = "A"

@@ -8,4 +8,5 @@ https://lospec.com/palette-list/na16
 
 ## Notes :
 	Sorry for my english
-	I put ti taah sometimes for . (short bip, ti) and - (long bip, taah)
+	I put 'ti' 'taah' : '.' ti short bip / '-' taah long bip
+	Sometime I put comments in capital letters but this means nothing
