@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://1jnr587qhn2e"]
+
+[ext_resource type="Script" uid="uid://dpk2rpsh5jtwy" path="res://Objects/hero.gd" id="1_o6mkr"]
+[ext_resource type="Script" uid="uid://b246giamxehvb" path="res://Level/camera_2d.gd" id="2_52x1o"]
+[ext_resource type="Texture2D" uid="uid://bm5i7b35nolvv" path="res://Aseprite/mockup/ui_base.png" id="2_uawph"]
+[ext_resource type="Texture2D" uid="uid://rpbk4xqjma7b" path="res://icon.svg" id="3_52x1o"]
+
+[node name="Level" type="Node2D" unique_id=675807826]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1577655171]
+position = Vector2(13, 45)
+texture = ExtResource("3_52x1o")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=2083715725]
+position = Vector2(349, 156)
+texture = ExtResource("3_52x1o")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=486463483]
+position = Vector2(-30, 207)
+position_smoothing_speed = 1.0
+script = ExtResource("2_52x1o")
+
+[node name="SubViewport" type="CanvasLayer" parent="." unique_id=975054709]
+script = ExtResource("1_o6mkr")
+
+[node name="Sprite2D" type="TextureRect" parent="SubViewport" unique_id=1378025673]
+offset_left = 248.0
+offset_right = 360.0
+offset_bottom = 360.0
+texture = ExtResource("2_uawph")
+
+[node name="Main" type="Button" parent="SubViewport" unique_id=691284511]
+offset_left = 272.0
+offset_top = 324.0
+offset_right = 356.0
+offset_bottom = 355.0
+text = "MORSE"
+
+[node name="Inputs" type="Control" parent="SubViewport" unique_id=2003454982]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="0" type="TextureRect" parent="SubViewport/Inputs" unique_id=844846978]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 289.0
+offset_right = 298.0
+offset_bottom = 316.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubViewport/Inputs/0" unique_id=1049770330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 14
+text = "A"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Timer" type="ColorRect" parent="SubViewport/Inputs/0" unique_id=1319288409]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 3.0
+grow_horizontal = 2
+
+[node name="Ti" type="ColorRect" parent="SubViewport/Inputs/0" unique_id=1980973788]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = -3.0
+grow_vertical = 0
+
+[node name="Taah" type="ColorRect" parent="SubViewport/Inputs/0" unique_id=828859712]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -5.0
+offset_right = 13.0
+offset_bottom = -3.0
+grow_vertical = 0

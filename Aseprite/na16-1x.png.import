@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cassm2qq4kfcr"
-path="res://.godot/imported/hero.png-a67b415b75f55441e12b378a0729ac31.ctex"
+uid="uid://dxa5rljltui58"
+path="res://.godot/imported/na16-1x.png-70c324e519e75d080fe3367335f79d3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aseprite/mockup/hero.png"
-dest_files=["res://.godot/imported/hero.png-a67b415b75f55441e12b378a0729ac31.ctex"]
+source_file="res://Aseprite/na16-1x.png"
+dest_files=["res://.godot/imported/na16-1x.png-70c324e519e75d080fe3367335f79d3c.ctex"]
 
 [params]
 
