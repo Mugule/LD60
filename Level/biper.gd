@@ -13,6 +13,7 @@ signal bip_end
 func _ready():
 	button_down.connect(on_pressed)
 	button_up.connect(on_released)
+	grab_focus()
 
 func _process(delta):
 	# Please do not use ui_accept in real game. I'm just a lazy boy
@@ -25,11 +26,11 @@ func _process(delta):
 				bip_pressed = false
 				tah.emit()
 
-func _input(event):
-	if event.is_action_pressed("ui_accept") :
-		ti_emit()
-	elif event.is_action_released("ui_accept") :
-		bip_released()
+#func _input(event):
+	#if event.is_action_pressed("ui_accept") :
+		#ti_emit()
+	#elif event.is_action_released("ui_accept") :
+		#bip_released()
 
 func on_pressed():
 	ti_emit()

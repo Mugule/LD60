@@ -364,15 +364,18 @@ offset_left = 275.0
 offset_top = 309.0
 offset_right = 338.0
 offset_bottom = 344.0
+mouse_filter = 2
 script = ExtResource("6_d6qko")
 
 [node name="0" parent="Hero/LetterContainer" unique_id=1826401334 instance=ExtResource("6_nk1il")]
 layout_mode = 0
+mouse_filter = 2
 
 [node name="1" parent="Hero/LetterContainer" unique_id=769515481 instance=ExtResource("6_nk1il")]
 layout_mode = 0
 offset_left = 32.0
 offset_right = 62.0
+mouse_filter = 2
 
 [node name="Biper" type="Button" parent="Hero" unique_id=691284511]
 offset_left = 261.0
@@ -692,6 +695,7 @@ offset_left = 2.0
 offset_top = 334.0
 offset_right = 26.0
 offset_bottom = 358.0
+focus_mode = 1
 texture_normal = ExtResource("23_232uv")
 texture_pressed = ExtResource("24_6uec0")
 texture_hover = ExtResource("25_r0jbq")
