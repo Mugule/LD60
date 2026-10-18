@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bpnm8bnsattdk" path="res://Level/letter_container.gd" id="6_d6qko"]
 [ext_resource type="PackedScene" uid="uid://dasmapp1dg0jy" path="res://Level/letter.tscn" id="6_nk1il"]
 [ext_resource type="Script" uid="uid://cdfp53cxepyqh" path="res://Level/drones.gd" id="7_1p6h5"]
+[ext_resource type="Script" uid="uid://cxd8gqbxhxnba" path="res://Level/safe_zone.gd" id="8_luomk"]
 [ext_resource type="Texture2D" uid="uid://m0pf615jp016" path="res://Aseprite/mockup/beach.png" id="10_py82k"]
 [ext_resource type="Texture2D" uid="uid://xa318p8svxwl" path="res://Aseprite/mockup/notes.png" id="12_i5g78"]
 [ext_resource type="FontFile" uid="uid://cyrc7x1exlkj1" path="res://Fonts/m3x6.ttf" id="13_q47le"]
@@ -68,14 +69,14 @@ position = Vector2(25, -255)
 rock_type = 2
 
 [node name="rock4" parent="World/Rocks" unique_id=1681998380 instance=ExtResource("3_1teg4")]
-position = Vector2(-26, -376)
+position = Vector2(-7, -377)
 
 [node name="rock5" parent="World/Rocks" unique_id=1405445797 instance=ExtResource("3_1teg4")]
 position = Vector2(-120, -236)
 rock_type = 1
 
 [node name="rock6" parent="World/Rocks" unique_id=221376380 instance=ExtResource("3_1teg4")]
-position = Vector2(88, -363)
+position = Vector2(105, -430)
 
 [node name="rock7" parent="World/Rocks" unique_id=1788348564 instance=ExtResource("3_1teg4")]
 position = Vector2(208, -214)
@@ -93,13 +94,13 @@ position = Vector2(116, -213)
 rock_type = 2
 
 [node name="rock11" parent="World/Rocks" unique_id=1021937008 instance=ExtResource("3_1teg4")]
-position = Vector2(48, -450)
+position = Vector2(65, -517)
 
 [node name="rock21" parent="World/Rocks" unique_id=1454577235 instance=ExtResource("3_1teg4")]
 position = Vector2(-164, -398)
 
 [node name="rock22" parent="World/Rocks" unique_id=1816209832 instance=ExtResource("3_1teg4")]
-position = Vector2(-204, -485)
+position = Vector2(-302, -505)
 
 [node name="rock12" parent="World/Rocks" unique_id=2126678116 instance=ExtResource("3_1teg4")]
 position = Vector2(-91, -426)
@@ -134,6 +135,51 @@ rock_type = 2
 position = Vector2(149, -303)
 rock_type = 1
 
+[node name="rock23" parent="World/Rocks" unique_id=314002688 instance=ExtResource("3_1teg4")]
+position = Vector2(-108, -498)
+rock_type = 2
+
+[node name="rock24" parent="World/Rocks" unique_id=1426545891 instance=ExtResource("3_1teg4")]
+position = Vector2(-159, -619)
+
+[node name="rock25" parent="World/Rocks" unique_id=912093718 instance=ExtResource("3_1teg4")]
+position = Vector2(-45, -606)
+
+[node name="rock26" parent="World/Rocks" unique_id=1279184608 instance=ExtResource("3_1teg4")]
+position = Vector2(-17, -456)
+rock_type = 2
+
+[node name="rock27" parent="World/Rocks" unique_id=1783799360 instance=ExtResource("3_1teg4")]
+position = Vector2(-262, -547)
+
+[node name="rock28" parent="World/Rocks" unique_id=768122838 instance=ExtResource("3_1teg4")]
+position = Vector2(-213, -499)
+rock_type = 1
+
+[node name="rock30" parent="World/Rocks" unique_id=91226320 instance=ExtResource("3_1teg4")]
+position = Vector2(159, -460)
+
+[node name="rock31" parent="World/Rocks" unique_id=844340839 instance=ExtResource("3_1teg4")]
+position = Vector2(119, -547)
+
+[node name="rock32" parent="World/Rocks" unique_id=1196710678 instance=ExtResource("3_1teg4")]
+position = Vector2(232, -488)
+
+[node name="rock33" parent="World/Rocks" unique_id=820439504 instance=ExtResource("3_1teg4")]
+position = Vector2(215, -560)
+rock_type = 2
+
+[node name="rock34" parent="World/Rocks" unique_id=542166108 instance=ExtResource("3_1teg4")]
+position = Vector2(68, -371)
+
+[node name="rock35" parent="World/Rocks" unique_id=991266065 instance=ExtResource("3_1teg4")]
+position = Vector2(212, -604)
+rock_type = 1
+
+[node name="rock29" parent="World/Rocks" unique_id=163899224 instance=ExtResource("3_1teg4")]
+position = Vector2(16, -546)
+rock_type = 1
+
 [node name="Boats" type="Node2D" parent="World" unique_id=1664959774]
 y_sort_enabled = true
 position = Vector2(-170, -434)
@@ -141,23 +187,25 @@ script = ExtResource("3_py82k")
 
 [node name="M" parent="World/Boats" unique_id=100744886 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(160, 455)
+position = Vector2(51, 472)
+boat_type = 1
 
 [node name="I" parent="World/Boats" unique_id=1091338488 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(104, 393)
+position = Vector2(-5, 410)
+boat_type = 1
 
 [node name="D" parent="World/Boats" unique_id=1603113405 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(57, 436)
+position = Vector2(-52, 453)
 
 [node name="T" parent="World/Boats" unique_id=233138924 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(121, 436)
+position = Vector2(12, 453)
 
 [node name="U" parent="World/Boats" unique_id=1449247885 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(181, 406)
+position = Vector2(72, 423)
 
 [node name="Drones" type="Node2D" parent="World" unique_id=1255335364]
 y_sort_enabled = true
@@ -172,7 +220,7 @@ position = Vector2(-320, 0)
 shape = SubResource("WorldBoundaryShape2D_1p6h5")
 
 [node name="North" type="CollisionShape2D" parent="World/Limits" unique_id=2143627754]
-position = Vector2(0, -750)
+position = Vector2(0, -800)
 shape = SubResource("WorldBoundaryShape2D_uqeto")
 
 [node name="East" type="CollisionShape2D" parent="World/Limits" unique_id=1103727442]
@@ -183,14 +231,15 @@ shape = SubResource("WorldBoundaryShape2D_luomk")
 position = Vector2(0, 90)
 shape = SubResource("WorldBoundaryShape2D_k8npl")
 
-[node name="Area2D" type="Area2D" parent="World" unique_id=81078730]
+[node name="SafeZone" type="Area2D" parent="World" unique_id=81078730]
+script = ExtResource("8_luomk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D" unique_id=2093538597]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SafeZone" unique_id=2093538597]
 position = Vector2(0, -700)
 shape = SubResource("RectangleShape2D_am3y4")
 debug_color = Color(3.85046e-07, 0.6345143, 0.43181545, 0.41960785)
 
-[node name="ColorRect" type="ColorRect" parent="World/Area2D/CollisionShape2D" unique_id=1262886267]
+[node name="ColorRect" type="ColorRect" parent="World/SafeZone/CollisionShape2D" unique_id=1262886267]
 z_index = -2
 offset_left = -500.0
 offset_top = -50.0
@@ -198,7 +247,7 @@ offset_right = 500.0
 offset_bottom = 50.0
 color = Color(0.39215687, 0.49019608, 0.20392157, 0.2509804)
 
-[node name="Label" type="Label" parent="World/Area2D" unique_id=149364447]
+[node name="Label" type="Label" parent="World/SafeZone" unique_id=149364447]
 z_index = -2
 anchors_preset = 15
 anchor_right = 1.0
@@ -210,7 +259,41 @@ offset_bottom = -650.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.7294118, 0.28235295)
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
+text = "SAFE ZONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="World/SafeZone" unique_id=885678891]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -484.0
+offset_top = -750.0
+offset_right = 16.0
+offset_bottom = -650.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.7294118, 0.28235295)
+theme_override_font_sizes/font_size = 32
+text = "SAFE ZONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="World/SafeZone" unique_id=1790557023]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -750.0
+offset_right = 484.0
+offset_bottom = -650.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.7294118, 0.28235295)
+theme_override_font_sizes/font_size = 32
 text = "SAFE ZONE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -424,7 +507,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
 theme_override_fonts/font = ExtResource("13_q47le")
 theme_override_font_sizes/font_size = 32
-text = "Next drone attack (time x1.0)"
+text = "Next drone (time x1.0)"
 horizontal_alignment = 1
 script = ExtResource("16_uqeto")
 

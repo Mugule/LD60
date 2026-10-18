@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d1mvq8vu6mpog" path="res://Objects/boat.gd" id="1_jnrec"]
 [ext_resource type="Texture2D" uid="uid://cer0qrp6mxyto" path="res://Aseprite/boats/civilian.png" id="2_xnmmp"]
+[ext_resource type="Texture2D" uid="uid://koxygbqbyoi1" path="res://Aseprite/boats/guards.png" id="3_xnmmp"]
+[ext_resource type="Texture2D" uid="uid://cgevio5257v7q" path="res://Aseprite/boats/guard_bang.png" id="4_mrslh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18ve3"]
 atlas = ExtResource("2_xnmmp")
@@ -93,16 +95,123 @@ height = 10.0
 [sub_resource type="Gradient" id="Gradient_jnrec"]
 colors = PackedColorArray(0.9607843, 0.92941177, 1, 1, 0.20392157, 0.52156866, 0.6156863, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur235"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oiq1"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmsvq"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxeo3"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybcqs"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii70t"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcoj"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8arcv"]
+atlas = ExtResource("3_xnmmp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qajy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur235")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oiq1")
+}],
+"loop": true,
+"name": &"TE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmsvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxeo3")
+}],
+"loop": true,
+"name": &"TN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybcqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii70t")
+}],
+"loop": true,
+"name": &"TS",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrcoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8arcv")
+}],
+"loop": true,
+"name": &"TW",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0l77"]
+radius = 72.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qajy1"]
+atlas = ExtResource("4_mrslh")
+region = Rect2(4, 0, 4, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtsa3"]
+atlas = ExtResource("4_mrslh")
+region = Rect2(0, 0, 4, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avo4y"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_qajy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtsa3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qajy1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Boat" type="Node2D" unique_id=100744886]
 y_sort_enabled = true
 script = ExtResource("1_jnrec")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=297426315]
+[node name="Civilian" type="AnimatedSprite2D" parent="." unique_id=297426315]
+visible = false
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_ur235")
 animation = &"TE"
 autoplay = "TS"
-frame_progress = 0.92241585
 offset = Vector2(0, -2)
 
 [node name="Id" type="Label" parent="." unique_id=1662204354]
@@ -135,3 +244,24 @@ gravity = Vector2(0, 10)
 initial_velocity_min = 10.0
 initial_velocity_max = 20.0
 color_initial_ramp = SubResource("Gradient_jnrec")
+
+[node name="Guard" type="AnimatedSprite2D" parent="." unique_id=1114279237]
+sprite_frames = SubResource("SpriteFrames_qajy1")
+animation = &"TW"
+frame_progress = 0.7834644
+
+[node name="GuardRange" type="Area2D" parent="." unique_id=741824004]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardRange" unique_id=1111005296]
+shape = SubResource("CircleShape2D_u0l77")
+debug_color = Color(0.88235295, 0.30980393, 0.34509805, 0.06666667)
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1875606972]
+position = Vector2(0, -2)
+
+[node name="Bang" type="AnimatedSprite2D" parent="Pivot" unique_id=1616026098]
+z_index = 1
+position = Vector2(6, 0)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_avo4y")

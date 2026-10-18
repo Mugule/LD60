@@ -1,6 +1,8 @@
 extends Node2D
 
 func _ready():
+	print("BOOM")
+	$AnimatedSprite2D.play("boom")
 	$AnimatedSprite2D.animation_finished.connect(dead_guys)
 
 func dead_guys():

@@ -6,6 +6,42 @@
 [sub_resource type="Gradient" id="Gradient_j8ubb"]
 colors = PackedColorArray(0.9607843, 0.92941177, 1, 1, 0.20392157, 0.52156866, 0.6156863, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj127"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(288, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ute38"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(312, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbe8t"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(336, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sek0"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(360, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpxhs"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(384, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f84ak"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1nai"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(432, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6ymd"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(456, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq4d3"]
+atlas = ExtResource("1_qtiyw")
+region = Rect2(480, 0, 24, 24)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2i4t"]
 atlas = ExtResource("1_qtiyw")
 region = Rect2(168, 0, 24, 24)
@@ -56,6 +92,38 @@ region = Rect2(264, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j2i4t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj127")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ute38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbe8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sek0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpxhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f84ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1nai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6ymd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq4d3")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j2i4t")
@@ -132,7 +200,6 @@ color_initial_ramp = SubResource("Gradient_j8ubb")
 sprite_frames = SubResource("SpriteFrames_j2i4t")
 animation = &"down"
 autoplay = "side"
-frame_progress = 0.71982527
 offset = Vector2(1, -4)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1968752005]
