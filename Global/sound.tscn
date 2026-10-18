@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cf66rcl105pq8"]
+
+[ext_resource type="Script" uid="uid://0ptq4jw0jx30" path="res://Global/sound.gd" id="1_tp48a"]
+[ext_resource type="AudioStream" uid="uid://c4vyox41ehrii" path="res://Sounds/explosion.wav" id="2_taugt"]
+[ext_resource type="AudioStream" uid="uid://dfhie2lq5nmnn" path="res://Sounds/laserShoot.wav" id="3_g5vod"]
+[ext_resource type="AudioStream" uid="uid://ccd2cqmbslk15" path="res://Sounds/explosion2.wav" id="4_g703a"]
+[ext_resource type="AudioStream" uid="uid://d4nb3cjm4xv02" path="res://Sounds/tone.wav" id="5_keq3l"]
+[ext_resource type="AudioStream" uid="uid://dr7v15jdd6qc7" path="res://Sounds/pickupCoin.wav" id="6_g5vod"]
+
+[node name="Sound" type="Node" unique_id=1699423121]
+script = ExtResource("1_tp48a")
+
+[node name="Explosion" type="AudioStreamPlayer" parent="." unique_id=1868157086]
+stream = ExtResource("2_taugt")
+bus = &"FX"
+
+[node name="Bang" type="AudioStreamPlayer" parent="." unique_id=678951739]
+stream = ExtResource("3_g5vod")
+bus = &"FX"
+
+[node name="DroneDead" type="AudioStreamPlayer" parent="." unique_id=1548485937]
+stream = ExtResource("4_g703a")
+volume_db = -23.246
+bus = &"FX"
+
+[node name="Tone" type="AudioStreamPlayer" parent="." unique_id=1890175563]
+stream = ExtResource("5_keq3l")
+bus = &"FX"
+
+[node name="OrderOk" type="AudioStreamPlayer" parent="." unique_id=1638386171]
+stream = ExtResource("6_g5vod")
+bus = &"FX"

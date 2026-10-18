@@ -52,6 +52,7 @@ func on_area_entered(area : Area2D):
 func shooted():
 	hp -= 1 
 	if hp == 0 : # Dead
+		Sound.play("drone_dead")
 		drone_dead.emit()
 		blocked = true
 		sprite.play("dead")

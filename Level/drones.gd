@@ -8,8 +8,8 @@ var targets : Dictionary = {}
 var spawn_left : float = -300
 var spawn_right : float = 300
 
-var timer_left : float = 5.0
-var timer_max : float = 5.0
+var timer_left : float = 20.0
+var timer_max : float = 20.0
 var ratio : float = 1.0
 var drones_dead : int = 0
 var paused : bool = false
@@ -74,7 +74,7 @@ func delete_boat_targets(boat : Boat) :
 			if dro != null : # there is some null guys (those who died)
 				dro.attacking = false
 				dro.target_pos = dro.origin_spawn
-				targets.erase(boat)
-				print("No more target")
-				no_target.emit()
+		targets.erase(boat)
+		print("No more target")
+		no_target.emit()
 	print("targets " + str(targets))

@@ -249,7 +249,7 @@ color_initial_ramp = SubResource("Gradient_jnrec")
 [node name="Guard" type="AnimatedSprite2D" parent="." unique_id=1114279237]
 sprite_frames = SubResource("SpriteFrames_qajy1")
 animation = &"W"
-frame_progress = 0.23850735
+frame_progress = 0.69386286
 
 [node name="GuardRange" type="Area2D" parent="." unique_id=741824004]
 monitorable = false

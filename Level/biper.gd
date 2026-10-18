@@ -37,10 +37,12 @@ func on_released():
 	bip_released()
 
 func bip_released():
+	Sound.tone_released()
 	bip_end.emit()
 	bip_pressed = false
 	time_pressed = 0.0
 func ti_emit():
+	Sound.play("tone")
 	tah_emited = false
 	bip_pressed = true
 	ti.emit()

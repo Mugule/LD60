@@ -87,6 +87,7 @@ func _physics_process(delta):
 					var aim : Vector2 = targets_guard[0].global_position - global_position
 					pivot.rotation = aim.angle()
 					bang.play("default")
+					Sound.play("bang")
 					targets_guard[0].shooted()
 					cd = 1.0
 				else :
@@ -153,6 +154,6 @@ func object_out_range(area : Area2D) :
 		targets_guard.erase(area.get_parent())
 
 func saved() :
-	print("I'm SAFE !")
+	print("I'm SAFE: " + name)
 	safe = true
 	cant_touch_me.emit()

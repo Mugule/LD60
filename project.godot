@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MorseGlobal="*uid://t8e43fwojy3j"
+Sound="*uid://cf66rcl105pq8"
 
 [display]
 
