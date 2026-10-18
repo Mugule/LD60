@@ -424,10 +424,10 @@ theme_override_font_sizes/font_size = 16
 text = "A .-"
 
 [node name="Order" type="Label" parent="Hero/Notes" unique_id=1441597184]
-offset_left = -10.0
-offset_top = -32.0
-offset_right = 30.0
-offset_bottom = -9.0
+offset_left = -8.0
+offset_top = -27.0
+offset_right = 32.0
+offset_bottom = -4.0
 theme_override_colors/font_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
 theme_override_fonts/font = ExtResource("13_q47le")
 theme_override_font_sizes/font_size = 16
@@ -534,43 +534,33 @@ text = "O ---"
 
 [node name="PS" type="Label" parent="Hero/Notes" unique_id=1482309221]
 offset_left = -5.0
-offset_top = 58.0
+offset_top = 64.0
 offset_right = 35.0
-offset_bottom = 81.0
+offset_bottom = 87.0
 theme_override_colors/font_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
 theme_override_fonts/font = ExtResource("13_q47le")
 theme_override_font_sizes/font_size = 16
-text = "PS"
+text = "Objective"
 
 [node name="Close1" type="Label" parent="Hero/Notes" unique_id=1060428798]
 offset_left = -5.0
-offset_top = 72.0
+offset_top = 76.0
 offset_right = 65.0
-offset_bottom = 95.0
+offset_bottom = 99.0
 theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
 theme_override_fonts/font = ExtResource("13_q47le")
 theme_override_font_sizes/font_size = 16
-text = "If we are"
+text = "Lead us to"
 
 [node name="Close2" type="Label" parent="Hero/Notes" unique_id=1540073933]
-offset_left = -4.0
-offset_top = 81.0
-offset_right = 66.0
-offset_bottom = 104.0
+offset_left = -3.0
+offset_top = 87.0
+offset_right = 67.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
 theme_override_fonts/font = ExtResource("13_q47le")
 theme_override_font_sizes/font_size = 16
-text = "to close :"
-
-[node name="Close3" type="Label" parent="Hero/Notes" unique_id=2008210059]
-offset_left = -5.0
-offset_top = 91.0
-offset_right = 65.0
-offset_bottom = 114.0
-theme_override_colors/font_color = Color(0.24313726, 0.12941177, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("13_q47le")
-theme_override_font_sizes/font_size = 16
-text = "more drone "
+text = "to north"
 
 [node name="DroneUI" type="Label" parent="Hero" unique_id=1300383996]
 anchors_preset = 5
@@ -691,3 +681,9 @@ theme_override_fonts/font = ExtResource("21_cv6tn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_jghi6")
 text = "Next"
 flat = true
+
+[node name="TextureButton" type="TextureButton" parent="Hero" unique_id=1477906880]
+offset_left = 6.0
+offset_top = 330.0
+offset_right = 30.0
+offset_bottom = 354.0

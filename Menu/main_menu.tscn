@@ -4,10 +4,49 @@
 [ext_resource type="Texture2D" uid="uid://c1kk1h1wuh2qo" path="res://Aseprite/Menu/001.png" id="1_fw3rq"]
 [ext_resource type="Script" uid="uid://wpwidnwdo6u7" path="res://Menu/main_menu.gd" id="1_vv7ca"]
 [ext_resource type="FontFile" uid="uid://lle4ihgx21n6" path="res://Fonts/Abaddon Bold.ttf" id="2_rw3mj"]
+[ext_resource type="Texture2D" uid="uid://buwba5ei4slch" path="res://Aseprite/titlescreen/titlescreen.png" id="2_ywk15"]
 [ext_resource type="Texture2D" uid="uid://d3tprqptwtxgl" path="res://Aseprite/Menu/002.png" id="3_cn2sd"]
+[ext_resource type="Texture2D" uid="uid://cwyl3830057r7" path="res://Aseprite/titlescreen/title.png" id="3_ws7s4"]
 [ext_resource type="Texture2D" uid="uid://ctj4c7evnn784" path="res://Aseprite/Menu/003.png" id="4_vv7ca"]
 [ext_resource type="Texture2D" uid="uid://b585vpdn3dkm" path="res://Aseprite/Menu/004.png" id="5_218iu"]
+[ext_resource type="FontFile" uid="uid://cyrc7x1exlkj1" path="res://Fonts/m3x6.ttf" id="5_ws7s4"]
 [ext_resource type="FontFile" uid="uid://dlwymwyerlilc" path="res://Fonts/Abaddon Light.ttf" id="6_rw3mj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fduiw"]
+atlas = ExtResource("2_ywk15")
+region = Rect2(0, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgse8"]
+atlas = ExtResource("2_ywk15")
+region = Rect2(360, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4wy8"]
+atlas = ExtResource("2_ywk15")
+region = Rect2(720, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqyvv"]
+atlas = ExtResource("2_ywk15")
+region = Rect2(1080, 0, 360, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8x2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fduiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgse8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4wy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqyvv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_218iu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -32,19 +71,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen" unique_id=1057994655]
+sprite_frames = SubResource("SpriteFrames_m8x2t")
+autoplay = "default"
+frame_progress = 0.8922766
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="TitleScreen" unique_id=1091336529]
+position = Vector2(73, 100)
+texture = ExtResource("3_ws7s4")
+centered = false
+
 [node name="Play" type="Button" parent="TitleScreen" unique_id=1235924678]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -10.25
-offset_right = 105.0
-offset_bottom = 100.25
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -98.0
+offset_right = 180.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
 theme_override_colors/font_focus_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
 theme_override_colors/font_pressed_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
@@ -54,6 +103,16 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_218iu")
 text = "PLAY"
 flat = true
+
+[node name="Label" type="Label" parent="TitleScreen" unique_id=37211984]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 345.0
+offset_right = 148.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(0.6156863, 0.1882353, 0.23137255, 1)
+theme_override_fonts/font = ExtResource("5_ws7s4")
+text = "Game for Ludum Dare #60 by Mugule"
 
 [node name="Intro" type="Control" parent="." unique_id=1614758535]
 visible = false
