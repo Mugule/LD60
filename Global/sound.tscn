@@ -30,3 +30,6 @@ bus = &"FX"
 [node name="OrderOk" type="AudioStreamPlayer" parent="." unique_id=1638386171]
 stream = ExtResource("6_g5vod")
 bus = &"FX"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=480801415]
+bus = &"Music"

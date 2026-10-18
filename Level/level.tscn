@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://xa318p8svxwl" path="res://Aseprite/mockup/notes.png" id="12_i5g78"]
 [ext_resource type="Texture2D" uid="uid://7cqd3ie87u4f" path="res://Aseprite/mockup/talkie_outline.png" id="12_l5n2q"]
 [ext_resource type="FontFile" uid="uid://cyrc7x1exlkj1" path="res://Fonts/m3x6.ttf" id="13_q47le"]
+[ext_resource type="Script" uid="uid://bikcywejgboc6" path="res://Objects/tw.gd" id="14_jghi6"]
 [ext_resource type="Script" uid="uid://c67xjlpuwtiag" path="res://Level/drone_ui.gd" id="16_uqeto"]
 [ext_resource type="FontFile" uid="uid://lle4ihgx21n6" path="res://Fonts/Abaddon Bold.ttf" id="20_l5n2q"]
 [ext_resource type="FontFile" uid="uid://dlwymwyerlilc" path="res://Fonts/Abaddon Light.ttf" id="21_cv6tn"]
@@ -35,6 +36,13 @@ normal = Vector2(-1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am3y4"]
 size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv6tn"]
+size = Vector2(683, 110)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jghi6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3opgi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jghi6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -193,25 +201,25 @@ script = ExtResource("3_py82k")
 
 [node name="M" parent="World/Boats" unique_id=100744886 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(20, 39)
+position = Vector2(53, -3)
 boat_type = 1
 
 [node name="I" parent="World/Boats" unique_id=1091338488 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(-36, -23)
+position = Vector2(-3, -65)
 boat_type = 1
 
 [node name="D" parent="World/Boats" unique_id=1603113405 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(-83, 20)
+position = Vector2(-50, -22)
 
 [node name="T" parent="World/Boats" unique_id=233138924 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(-19, 20)
+position = Vector2(14, -22)
 
 [node name="U" parent="World/Boats" unique_id=1449247885 instance=ExtResource("3_wqlfs")]
 y_sort_enabled = false
-position = Vector2(41, -10)
+position = Vector2(53, -49)
 
 [node name="Drones" type="Node2D" parent="World" unique_id=1255335364]
 y_sort_enabled = true
@@ -307,6 +315,13 @@ text = "SAFE ZONE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StartedDrone" type="Area2D" parent="World" unique_id=80481685]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StartedDrone" unique_id=198655869]
+position = Vector2(-10.5, -175)
+shape = SubResource("RectangleShape2D_cv6tn")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=486463483]
 position_smoothing_speed = 1.0
 script = ExtResource("2_52x1o")
@@ -327,8 +342,10 @@ offset_top = 222.0
 offset_right = 357.0
 offset_bottom = 366.0
 texture = ExtResource("11_am3y4")
+script = ExtResource("14_jghi6")
 
 [node name="Outline" type="TextureRect" parent="Hero/TW" unique_id=1672880999]
+visible = false
 modulate = Color(0.9607843, 0.92941177, 0.7294118, 1)
 layout_mode = 0
 offset_right = 40.0
@@ -358,6 +375,8 @@ offset_top = 286.0
 offset_right = 359.0
 offset_bottom = 360.0
 theme_type_variation = &"FlatButton"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jghi6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3opgi")
 script = ExtResource("5_iincs")
 
 [node name="Notes" type="Sprite2D" parent="Hero" unique_id=996985863]
@@ -582,6 +601,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 color = Color(0.9607843, 0.92941177, 0.7294118, 1)
 
 [node name="EndScreen" type="ColorRect" parent="Hero" unique_id=329580043]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -640,6 +660,21 @@ text = "GAME OVER
 Everyone is dead.
 "
 horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="Hero/EndScreen" unique_id=402571543]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_cv6tn")
+text = "Thanks for playing !
+
+- Mugule -"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Next" type="Button" parent="Hero/EndScreen" unique_id=1299191961]
 visible = false

@@ -27,7 +27,7 @@ var speed : float = 6.0
 var actual_direction : Vector2 = Vector2.ZERO
 var targets_guard : Array = []
 var shoot_cooldown : float = 1.0
-var cd : float = 1.0
+var cd : float = 0.0
 
 var safe : bool = false
 

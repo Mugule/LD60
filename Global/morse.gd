@@ -4,7 +4,7 @@ class_name Morse extends Node
 # setting of the short and space time
 
 @export var short_time : float = 0.1
-@export var space_time : float = 0.7
+@export var space_time : float = 0.6
 
 var letters : Dictionary = {
 	".-" : "A",

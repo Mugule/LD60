@@ -12,7 +12,7 @@ var timer_left : float = 20.0
 var timer_max : float = 20.0
 var ratio : float = 1.0
 var drones_dead : int = 0
-var paused : bool = false
+var paused : bool = true
 
 signal drone_spawned
 signal no_target

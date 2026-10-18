@@ -44,10 +44,11 @@ func _physics_process(delta):
 func on_area_entered(area : Area2D):
 	if area.get_parent() == target :
 		await get_tree().create_timer(0.4).timeout
-		if !target.safe :
-			attacking = false
-			target_pos = origin_spawn
-			attack.emit(target)
+		if target != null :
+			if !target.safe :
+				attacking = false
+				target_pos = origin_spawn
+				attack.emit(target)
 
 func shooted():
 	hp -= 1 

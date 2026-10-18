@@ -11,6 +11,7 @@ extends Node2D
 @onready var next_end_screen : Button = $Hero/EndScreen/Next
 
 var game_end : bool = false
+var timer_not_started : bool = true
 
 # Just some init parameters
 func _ready():
@@ -23,6 +24,7 @@ func _ready():
 	drones.spawn_left = limits.get_node("West").position.x
 	drones.spawn_right = limits.get_node("East").position.x
 	# Connections
+	$World/StartedDrone.area_entered.connect(start_timer_drones)
 	hero.valid_word.connect(boats.on_valid_word)
 	drones.no_target.connect(no_more_target)
 	next_end_screen.pressed.connect(finish)
@@ -41,6 +43,12 @@ func _ready():
 	await tween.finished
 	end_screen.hide()
 
+func start_timer_drones(area):
+	if timer_not_started : # drones.pause sometimes activated, have to use this
+		if area.get_parent() is Boat :
+			timer_not_started = false
+			drones.paused = false
+
 ## EMITTED by drones when update boat if saved or attacked.
 func no_more_target() :
 	if !game_end : # I dont know why I put this here, I'm tired boss.
@@ -48,6 +56,8 @@ func no_more_target() :
 		end_game()
 
 func end_game() :
+	drones.paused = true
+	end_screen.show()
 	var tween = create_tween()
 	tween.tween_property(end_screen,"color:a",1.0,1.0)
 	await tween.finished
@@ -70,10 +80,16 @@ func end_game() :
 		await get_tree().create_timer(1.0).timeout
 		end_screen.get_node("GameOver").text += drone_text
 	await get_tree().create_timer(1.0).timeout
-	end_screen.next_end_screen.show()
+	next_end_screen.show()
 	end_screen.grab_focus()
 
 func finish() :
-	ResourceLoader.load_threaded_request("res://Level/level.tscn")
-	var packed_scene = ResourceLoader.load_threaded_get("res://Level/level.tscn")
-	get_tree().change_scene_to_packed(packed_scene)
+	if end_screen.get_node("Credits").visible :
+		ResourceLoader.load_threaded_request("res://Menu/main_menu.tscn")
+		var packed_scene = ResourceLoader.load_threaded_get("res://Menu/main_menu.tscn")
+		get_tree().change_scene_to_packed(packed_scene)
+	else :
+		end_screen.get_node("GameOver").hide()
+		end_screen.get_node("PartialWin").hide()
+		end_screen.get_node("TotalWin").hide()
+		end_screen.get_node("Credits").show()
