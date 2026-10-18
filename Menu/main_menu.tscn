@@ -79,7 +79,7 @@ grow_vertical = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen" unique_id=1057994655]
 sprite_frames = SubResource("SpriteFrames_m8x2t")
 autoplay = "default"
-frame_progress = 0.23568924
+frame_progress = 0.2587
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="TitleScreen" unique_id=1091336529]
