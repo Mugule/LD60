@@ -8,8 +8,8 @@
 
 [node name="Letter" type="TextureRect" unique_id=1826401334]
 custom_minimum_size = Vector2(28, 28)
-offset_right = 28.0
-offset_bottom = 28.0
+offset_right = 30.0
+offset_bottom = 34.0
 texture = ExtResource("1_wwulo")
 script = ExtResource("2_p0p00")
 
@@ -18,12 +18,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 4.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/default_color = Color(0.101960786, 0.03529412, 0.2, 1)
-theme_override_font_sizes/normal_font_size = 14
+theme_override_colors/default_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+theme_override_font_sizes/normal_font_size = 24
 text = "A"
 scroll_active = false
 horizontal_alignment = 1
@@ -37,7 +35,7 @@ offset_top = 1.0
 offset_right = -1.0
 offset_bottom = 4.0
 grow_horizontal = 2
-color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+color = Color(0.12156863, 0.05490196, 0.10980392, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=21842790]
 one_shot = true
@@ -70,7 +68,6 @@ layout_mode = 2
 texture = ExtResource("3_ynoh7")
 
 [node name="Ta1" type="TextureRect" parent="Bips" unique_id=260559450]
-visible = false
 layout_mode = 2
 texture = ExtResource("4_82uwe")
 
@@ -85,7 +82,6 @@ layout_mode = 2
 texture = ExtResource("4_82uwe")
 
 [node name="Ti3" type="TextureRect" parent="Bips" unique_id=1513356390]
-visible = false
 layout_mode = 2
 texture = ExtResource("3_ynoh7")
 
@@ -95,7 +91,6 @@ layout_mode = 2
 texture = ExtResource("4_82uwe")
 
 [node name="Checkmark" type="TextureRect" parent="." unique_id=2047984480]
-visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0

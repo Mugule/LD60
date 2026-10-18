@@ -11,10 +11,11 @@ var spawn_right : float = 300
 var timer_left : float = 5.0
 var timer_max : float = 5.0
 var ratio : float = 1.0
-
+var drones_dead : int = 0
 var paused : bool = false
 
 signal drone_spawned
+signal no_target
 
 func _physics_process(delta):
 	if !paused :
@@ -37,7 +38,7 @@ func spawn_drone():
 		targets[target].append(drone_instance)
 		print("New drone with target : " +str(target.name))
 		drone_instance.attack.connect(on_attacked_boat)
-		target.cant_touch_me.connect(drone_instance.on_saved_target)
+		drone_instance.drone_dead.connect(on_drone_dead)
 		drone_spawned.emit()
 		# Go back to spawn
 		timer_left = timer_max
@@ -53,11 +54,27 @@ func on_attacked_boat(boat : Boat) :
 	await delete_boat_targets(boat)
 	boat.queue_free()
 
+func on_drone_dead():
+	drones_dead += 1
+
 func on_saved_boat(boat : Boat) :
 	await delete_boat_targets(boat)
-	print("targets " + str(targets))
 
 func delete_boat_targets(boat : Boat) :
-	if targets.has(boat):
-		for dro in targets[boat] :
-			
+	if targets.size() > 1 :
+		var dro_to_change : Array = targets[boat]
+		targets.erase(boat)
+		for dro in dro_to_change :
+			if dro != null : # there is some null guys (those who died)
+				var t : Boat = targets.keys().pick_random()
+				dro.target = targets.keys().pick_random()
+				print("New target %s for drone" % t.name)
+	else :
+		for dro in targets[boat] : # Go back
+			if dro != null : # there is some null guys (those who died)
+				dro.attacking = false
+				dro.target_pos = dro.origin_spawn
+				targets.erase(boat)
+				print("No more target")
+				no_target.emit()
+	print("targets " + str(targets))

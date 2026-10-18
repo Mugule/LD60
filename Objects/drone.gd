@@ -14,6 +14,7 @@ var origin_spawn : Vector2 = Vector2(0,300)
 var hp : int = 2
 
 signal attack(attacked : Boat)
+signal drone_dead
 
 func _ready():
 	area_2d.area_entered.connect(on_area_entered)
@@ -51,6 +52,7 @@ func on_area_entered(area : Area2D):
 func shooted():
 	hp -= 1 
 	if hp == 0 : # Dead
+		drone_dead.emit()
 		blocked = true
 		sprite.play("dead")
 		await sprite.animation_finished

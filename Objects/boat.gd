@@ -3,6 +3,7 @@ class_name Boat extends Node2D
 @onready var civilian_sprite : AnimatedSprite2D = $Civilian
 @onready var guard_sprite : AnimatedSprite2D = $Guard
 @onready var guard_area : Area2D = $GuardRange
+@onready var guard_range : Sprite2D = $GuardRangeViz
 var sprite : AnimatedSprite2D
 @onready var pivot : Node2D = $Pivot
 @onready var bang : AnimatedSprite2D = $Pivot/Bang
@@ -35,11 +36,11 @@ var obstacle : Area2D = null
 signal cant_touch_me
 
 var orders : Dictionary = {
-	"NO" : Vector2.ZERO,
-	"TN" : Vector2.UP,
-	"TE" : Vector2.RIGHT,
-	"TS" : Vector2.DOWN,
-	"TW" : Vector2.LEFT
+	"O" : Vector2.ZERO,
+	"N" : Vector2.UP,
+	"E" : Vector2.RIGHT,
+	"S" : Vector2.DOWN,
+	"W" : Vector2.LEFT
 }
 
 func _ready():
@@ -55,6 +56,7 @@ func _ready():
 		guard_sprite.show()
 		civilian_sprite.hide()
 		# AREA 2D
+		guard_range.show()
 		guard_area.area_entered.connect(object_in_range)
 		guard_area.area_exited.connect(object_out_range)
 	else :
@@ -137,10 +139,8 @@ func on_area_exited(_area : Area2D):
 
 func on_area_entered(area : Area2D):
 	var x = area.get_parent()
-	if x is Boat :
-		actual_direction = Vector2.ZERO
-		obstacle = area
-	elif x is Rock :
+	if x is Boat or x is Rock :
+		particule.emitting = false
 		actual_direction = Vector2.ZERO
 		obstacle = area
 

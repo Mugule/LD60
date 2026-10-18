@@ -22,7 +22,7 @@ func _ready():
 func _process(_delta):
 	if active : # Bar go down
 		var ratio : float = timer.time_left / MorseGlobal.space_time
-		timer_bar.size.x = ratio * 26
+		timer_bar.size.x = ratio * 28
 
 func reset(): # Parent reset the letter
 	active = false
@@ -30,7 +30,7 @@ func reset(): # Parent reset the letter
 	timer.wait_time = MorseGlobal.space_time
 	letter_node.text = "-"
 	current = ""
-	timer_bar.size.x = 26
+	timer_bar.size.x = 28
 	for b in bips.get_children() :
 		b.hide()
 	checkmark.hide()

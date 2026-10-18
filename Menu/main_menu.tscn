@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://c63ofvlrqlccd"]
 
+[ext_resource type="Script" uid="uid://di1sej2i3pdc6" path="res://Menu/intro.gd" id="1_cn2sd"]
+[ext_resource type="Texture2D" uid="uid://c1kk1h1wuh2qo" path="res://Aseprite/Menu/001.png" id="1_fw3rq"]
+[ext_resource type="Script" uid="uid://wpwidnwdo6u7" path="res://Menu/main_menu.gd" id="1_vv7ca"]
+[ext_resource type="FontFile" uid="uid://lle4ihgx21n6" path="res://Fonts/Abaddon Bold.ttf" id="2_rw3mj"]
+[ext_resource type="Texture2D" uid="uid://d3tprqptwtxgl" path="res://Aseprite/Menu/002.png" id="3_cn2sd"]
+[ext_resource type="Texture2D" uid="uid://ctj4c7evnn784" path="res://Aseprite/Menu/003.png" id="4_vv7ca"]
+[ext_resource type="Texture2D" uid="uid://b585vpdn3dkm" path="res://Aseprite/Menu/004.png" id="5_218iu"]
+[ext_resource type="FontFile" uid="uid://dlwymwyerlilc" path="res://Fonts/Abaddon Light.ttf" id="6_rw3mj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_218iu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv7ca"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="MainMenu" type="Control" unique_id=21895194]
 layout_mode = 3
 anchors_preset = 15
@@ -7,19 +22,215 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vv7ca")
 
-[node name="PLAY" type="Button" parent="." unique_id=40561243]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 94.0
-offset_right = 280.0
-offset_bottom = 125.0
+[node name="TitleScreen" type="Control" parent="." unique_id=1795320576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="TitleScreen" unique_id=1235924678]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -10.25
+offset_right = 105.0
+offset_bottom = 100.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_colors/font_focus_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+theme_override_colors/font_pressed_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
+theme_override_colors/font_hover_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+theme_override_fonts/font = ExtResource("6_rw3mj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_218iu")
 text = "PLAY"
+flat = true
 
-[node name="QUIT" type="Button" parent="." unique_id=758690877]
+[node name="Intro" type="Control" parent="." unique_id=1614758535]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cn2sd")
+
+[node name="Panels" type="Control" parent="Intro" unique_id=1633237979]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="TextureRect" parent="Intro/Panels" unique_id=1716959318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fw3rq")
+
+[node name="Label1" type="Label" parent="Intro/Panels/1" unique_id=1433928892]
+visible = false
 layout_mode = 0
-offset_left = 204.0
-offset_top = 129.0
-offset_right = 280.0
-offset_bottom = 160.0
-text = "QUIT"
+offset_left = 15.0
+offset_top = 104.0
+offset_right = 413.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.12156863, 0.05490196, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "Do you see those rocks?"
+
+[node name="Label2" type="Label" parent="Intro/Panels/1" unique_id=969108804]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 131.0
+offset_right = 435.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0.12156863, 0.05490196, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "That's the way we're going."
+
+[node name="2" type="TextureRect" parent="Intro/Panels" unique_id=1387307472]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cn2sd")
+
+[node name="Label1" type="Label" parent="Intro/Panels/2" unique_id=644806249]
+visible = false
+layout_mode = 0
+offset_left = 139.0
+offset_top = 87.0
+offset_right = 322.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0.12156863, 0.05490196, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "The roboports are broken
+ for now."
+
+[node name="Label2" type="Label" parent="Intro/Panels/2" unique_id=1088517587]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 138.0
+offset_right = 352.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0.12156863, 0.05490196, 0.10980392, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "But the drones will come."
+
+[node name="3" type="TextureRect" parent="Intro/Panels" unique_id=2053557113]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vv7ca")
+
+[node name="Label1" type="Label" parent="Intro/Panels/3" unique_id=1329112465]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 206.0
+offset_right = 359.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "You're the smallest one who can fit 
+in our balloon. You'll be safe out there. "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Intro/Panels/3" unique_id=1574307560]
+visible = false
+layout_mode = 0
+offset_top = 248.0
+offset_right = 360.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "Take this walkie-talkie and guide us 
+with good old Morse code."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="TextureRect" parent="Intro/Panels" unique_id=1851424293]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_218iu")
+
+[node name="Label1" type="Label" parent="Intro/Panels/4" unique_id=2024726725]
+visible = false
+layout_mode = 0
+offset_top = 144.0
+offset_right = 360.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "Old techniques versus new technology, 
+am I right?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Intro/Panels/4" unique_id=1919610231]
+visible = false
+layout_mode = 0
+offset_top = 144.0
+offset_right = 360.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Intro/Panels/4" unique_id=1984883630]
+visible = false
+layout_mode = 0
+offset_top = 144.0
+offset_right = 360.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_rw3mj")
+text = "Good luck, my son."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="Button" parent="Intro" unique_id=1502373588]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 295.0
+offset_right = 358.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0.54901963, 0.56078434, 0.68235296, 1)
+theme_override_colors/font_focus_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+theme_override_colors/font_pressed_color = Color(0.22745098, 0.13725491, 0.4392157, 1)
+theme_override_colors/font_hover_color = Color(0.9607843, 0.92941177, 0.7294118, 1)
+theme_override_fonts/font = ExtResource("6_rw3mj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vv7ca")
+text = "Next"
+flat = true
