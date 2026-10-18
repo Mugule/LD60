@@ -22,6 +22,12 @@
 [ext_resource type="Script" uid="uid://c67xjlpuwtiag" path="res://Level/drone_ui.gd" id="16_uqeto"]
 [ext_resource type="FontFile" uid="uid://lle4ihgx21n6" path="res://Fonts/Abaddon Bold.ttf" id="20_l5n2q"]
 [ext_resource type="FontFile" uid="uid://dlwymwyerlilc" path="res://Fonts/Abaddon Light.ttf" id="21_cv6tn"]
+[ext_resource type="Texture2D" uid="uid://3fgbfighugb7" path="res://Aseprite/Menu/Soundui/son_normal.png" id="23_232uv"]
+[ext_resource type="Texture2D" uid="uid://cs10vw37njqi2" path="res://Aseprite/Menu/Soundui/son_pressed.png" id="24_6uec0"]
+[ext_resource type="Texture2D" uid="uid://cqwx7t47juxr2" path="res://Aseprite/Menu/Soundui/son_hover.png" id="25_r0jbq"]
+[ext_resource type="Texture2D" uid="uid://cddtj0arr6lr6" path="res://Aseprite/Menu/Soundui/music_normal.png" id="26_816bt"]
+[ext_resource type="Texture2D" uid="uid://dwsdfj83uno2r" path="res://Aseprite/Menu/Soundui/music_pressed.png" id="27_mddns"]
+[ext_resource type="Texture2D" uid="uid://clonvawh0m1ro" path="res://Aseprite/Menu/Soundui/music_hover.png" id="28_x31ef"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1p6h5"]
 normal = Vector2(1, 0)
@@ -682,8 +688,20 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_jghi6")
 text = "Next"
 flat = true
 
-[node name="TextureButton" type="TextureButton" parent="Hero" unique_id=1477906880]
-offset_left = 6.0
-offset_top = 330.0
-offset_right = 30.0
-offset_bottom = 354.0
+[node name="Sound" type="TextureButton" parent="Hero" unique_id=1477906880]
+offset_left = 2.0
+offset_top = 334.0
+offset_right = 26.0
+offset_bottom = 358.0
+texture_normal = ExtResource("23_232uv")
+texture_pressed = ExtResource("24_6uec0")
+texture_hover = ExtResource("25_r0jbq")
+
+[node name="Music" type="TextureButton" parent="Hero" unique_id=1917358246]
+offset_left = 28.0
+offset_top = 334.0
+offset_right = 52.0
+offset_bottom = 358.0
+texture_normal = ExtResource("26_816bt")
+texture_pressed = ExtResource("27_mddns")
+texture_hover = ExtResource("28_x31ef")
