@@ -7,6 +7,15 @@ var m4 : AudioStreamWAV = preload("res://Sounds/music/solo2.wav")
 var m5 : AudioStreamWAV = preload("res://Sounds/music/song1.wav")
 var m6 : AudioStreamWAV = preload("res://Sounds/music/yahou.wav")
 
+var tween_music : Tween
+var tween_sound : Tween
+
+func sound_off():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(0))
+
+func sound_on():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(1))
+
 func _ready():
 	$Music.finished.connect(music_play)
 	music_play(m1)

@@ -25,9 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://3fgbfighugb7" path="res://Aseprite/Menu/Soundui/son_normal.png" id="23_232uv"]
 [ext_resource type="Texture2D" uid="uid://cs10vw37njqi2" path="res://Aseprite/Menu/Soundui/son_pressed.png" id="24_6uec0"]
 [ext_resource type="Texture2D" uid="uid://cqwx7t47juxr2" path="res://Aseprite/Menu/Soundui/son_hover.png" id="25_r0jbq"]
-[ext_resource type="Texture2D" uid="uid://cddtj0arr6lr6" path="res://Aseprite/Menu/Soundui/music_normal.png" id="26_816bt"]
-[ext_resource type="Texture2D" uid="uid://dwsdfj83uno2r" path="res://Aseprite/Menu/Soundui/music_pressed.png" id="27_mddns"]
-[ext_resource type="Texture2D" uid="uid://clonvawh0m1ro" path="res://Aseprite/Menu/Soundui/music_hover.png" id="28_x31ef"]
+[ext_resource type="Script" uid="uid://ce3lkcfjeyl2i" path="res://Level/sound_button.gd" id="26_r0jbq"]
+[ext_resource type="Texture2D" uid="uid://77ryq5s6pxcf" path="res://Aseprite/Menu/Soundui/bare.png" id="27_816bt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1p6h5"]
 normal = Vector2(1, 0)
@@ -688,7 +687,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_jghi6")
 text = "Next"
 flat = true
 
-[node name="Sound" type="TextureButton" parent="Hero" unique_id=1477906880]
+[node name="SoundButton" type="TextureButton" parent="Hero" unique_id=1477906880]
 offset_left = 2.0
 offset_top = 334.0
 offset_right = 26.0
@@ -696,12 +695,11 @@ offset_bottom = 358.0
 texture_normal = ExtResource("23_232uv")
 texture_pressed = ExtResource("24_6uec0")
 texture_hover = ExtResource("25_r0jbq")
+script = ExtResource("26_r0jbq")
 
-[node name="Music" type="TextureButton" parent="Hero" unique_id=1917358246]
-offset_left = 28.0
-offset_top = 334.0
-offset_right = 52.0
-offset_bottom = 358.0
-texture_normal = ExtResource("26_816bt")
-texture_pressed = ExtResource("27_mddns")
-texture_hover = ExtResource("28_x31ef")
+[node name="False" type="TextureRect" parent="Hero/SoundButton" unique_id=624069752]
+visible = false
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("27_816bt")
