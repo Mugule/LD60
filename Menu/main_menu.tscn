@@ -10,7 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://ctj4c7evnn784" path="res://Aseprite/Menu/003.png" id="4_vv7ca"]
 [ext_resource type="Texture2D" uid="uid://b585vpdn3dkm" path="res://Aseprite/Menu/004.png" id="5_218iu"]
 [ext_resource type="FontFile" uid="uid://cyrc7x1exlkj1" path="res://Fonts/m3x6.ttf" id="5_ws7s4"]
+[ext_resource type="Texture2D" uid="uid://3fgbfighugb7" path="res://Aseprite/Menu/Soundui/son_normal.png" id="6_m8x2t"]
 [ext_resource type="FontFile" uid="uid://dlwymwyerlilc" path="res://Fonts/Abaddon Light.ttf" id="6_rw3mj"]
+[ext_resource type="Texture2D" uid="uid://cs10vw37njqi2" path="res://Aseprite/Menu/Soundui/son_pressed.png" id="7_e2v8n"]
+[ext_resource type="Texture2D" uid="uid://cqwx7t47juxr2" path="res://Aseprite/Menu/Soundui/son_hover.png" id="8_is5sc"]
+[ext_resource type="Script" uid="uid://ce3lkcfjeyl2i" path="res://Level/sound_button.gd" id="9_lb8o0"]
+[ext_resource type="Texture2D" uid="uid://77ryq5s6pxcf" path="res://Aseprite/Menu/Soundui/bare.png" id="10_1r3sl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fduiw"]
 atlas = ExtResource("2_ywk15")
@@ -74,7 +79,7 @@ grow_vertical = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TitleScreen" unique_id=1057994655]
 sprite_frames = SubResource("SpriteFrames_m8x2t")
 autoplay = "default"
-frame_progress = 0.8922766
+frame_progress = 0.23568924
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="TitleScreen" unique_id=1091336529]
@@ -113,6 +118,24 @@ offset_bottom = 368.0
 theme_override_colors/font_color = Color(0.6156863, 0.1882353, 0.23137255, 1)
 theme_override_fonts/font = ExtResource("5_ws7s4")
 text = "Game for Ludum Dare #60 by Mugule"
+
+[node name="SoundButton" type="TextureButton" parent="TitleScreen" unique_id=886908983]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 335.0
+offset_right = 359.0
+offset_bottom = 359.0
+texture_normal = ExtResource("6_m8x2t")
+texture_pressed = ExtResource("7_e2v8n")
+texture_hover = ExtResource("8_is5sc")
+script = ExtResource("9_lb8o0")
+
+[node name="False" type="TextureRect" parent="TitleScreen/SoundButton" unique_id=105157922]
+visible = false
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("10_1r3sl")
 
 [node name="Intro" type="Control" parent="." unique_id=1614758535]
 visible = false
